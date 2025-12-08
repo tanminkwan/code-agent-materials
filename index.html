@@ -3,115 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Son Heung-min Slideshow</title>
+    <title>Code Agent Materials</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Segoe UI,sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px;color:white}
-        h1{margin-bottom:30px;font-size:2.5rem;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
-        h2{margin-top:50px;margin-bottom:20px;font-size:1.8rem;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
-        .video-container{background:rgba(255,255,255,0.1);padding:20px;border-radius:15px;box-shadow:0 8px 32px rgba(0,0,0,0.3)}
-        video{max-width:100%;max-height:70vh;border-radius:10px}
-        .info{margin-top:20px;text-align:center;opacity:0.8}
-        .claude-console{background:#1a1a1a;border-radius:12px;max-width:900px;width:100%;margin-top:20px;box-shadow:0 8px 32px rgba(0,0,0,0.5);font-family:Monaco,Menlo,monospace;font-size:13px;max-height:500px;overflow-y:auto}
-        .console-header{background:#2a2a2a;padding:10px 15px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #333;position:sticky;top:0}
-        .console-dot{width:12px;height:12px;border-radius:50%}
-        .dot-red{background:#ff5f56}.dot-yellow{background:#ffbd2e}.dot-green{background:#27ca40}
-        .console-title{color:#888;margin-left:10px;font-size:12px}
-        .console-content{padding:20px;line-height:1.6}
-        .console-section{margin-bottom:25px}
-        .section-title{color:#d19a66;font-weight:bold;margin-bottom:15px;font-size:14px}
-        .subsection{color:#98c379;font-weight:bold;margin:15px 0 10px 0;font-size:13px}
-        .user-msg{color:#61afef;margin:8px 0}.user-msg::before{content:"> ";color:#98c379}
-        .claude-msg{color:#abb2bf;margin:8px 0 8px 20px;padding-left:10px;border-left:2px solid #4a4a4a}
-        .highlight{color:#e5c07b}.file-name{color:#c678dd}
-        .code-block{background:#282c34;padding:10px 15px;border-radius:6px;margin:10px 0;color:#98c379;font-size:11px}
-        .ctable{width:100%;border-collapse:collapse;font-size:12px}
-        .ctable th{background:#333;color:#e5c07b;padding:8px 12px;text-align:left;border:1px solid #444}
-        .ctable td{padding:8px 12px;border:1px solid #444;color:#abb2bf}
+        body{font-family:Segoe UI,sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;color:white}
+        h1{margin-bottom:50px;font-size:2.5rem;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
+        .menu{display:flex;flex-direction:column;gap:20px;max-width:500px;width:100%}
+        .menu-item{background:rgba(255,255,255,0.1);padding:30px 40px;border-radius:15px;box-shadow:0 8px 32px rgba(0,0,0,0.3);text-decoration:none;color:white;font-size:1.3rem;transition:all 0.3s ease;display:flex;align-items:center;gap:15px}
+        .menu-item:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+        .menu-number{background:#d19a66;color:#1a1a2e;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold}
+        .menu-text{flex:1}
     </style>
 </head>
 <body>
-    <h1>Son Heung-min Slideshow</h1>
-    <div class="video-container">
-        <video controls autoplay>
-            <source src="son_slideshow.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="info"><p>15 seconds slideshow with background music</p></div>
-
-    <h2>Making-of Video</h2>
-    <div class="video-container">
-        <video controls>
-            <source src="cmd_recording_trimmed4_2x.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="info"><p>Recording of the slideshow creation process</p></div>
-
-    <div class="claude-console">
-        <div class="console-header">
-            <div class="console-dot dot-red"></div>
-            <div class="console-dot dot-yellow"></div>
-            <div class="console-dot dot-green"></div>
-            <span class="console-title">Claude Code - 대화 기록</span>
-        </div>
-        <div class="console-content">
-            <div class="console-section">
-                <div class="section-title">## 7. 특정 창 녹화 (CMD)</div>
-                <div class="user-msg">특정 window를 녹화할꺼야. 활성화된 window list 해봐</div>
-                <div class="claude-msg">현재 실행 중인 창 목록:<br>1. List Windows<br>2. Windows PowerShell<br>3. code-agent - 파일 탐색기<br>4. Notepad<br>5. Google Slides - Chrome<br>6. memory_agent.py - Cursor</div>
-                <div class="user-msg">2</div>
-                <div class="claude-msg">PowerShell 창 녹화 시작</div>
-                <div class="user-msg">중지해</div>
-                <div class="claude-msg">녹화가 너무 빨리 중지되어 파일이 손상됨. 다시 녹화할까요?</div>
-                <div class="user-msg">엉</div>
-                <div class="claude-msg">창 목록 재확인 (PowerShell이 cmd.exe로 변경됨)</div>
-                <div class="user-msg">2</div>
-                <div class="claude-msg">cmd 창(1129x635) 녹화 시작. 파일: <span class="file-name">cmd_recording.mkv</span></div>
-                <div class="user-msg">Stop</div>
-                <div class="claude-msg">녹화 완료. 파일: <span class="file-name">cmd_recording.mkv</span> (약 11MB)</div>
-            </div>
-
-            <div class="console-section">
-                <div class="section-title">## 8. CMD 영상 편집 - 여러 구간 제거</div>
-                <div class="subsection">### 8-1. 앞부분 제거</div>
-                <div class="user-msg">0 ~ 1:35 부분 제거해. 원본은 남겨둬</div>
-                <div class="claude-msg">완료.<br>- 원본: <span class="file-name">cmd_recording.mkv</span> - 유지됨<br>- 편집본: <span class="file-name">cmd_recording_trimmed.mkv</span> (약 9.8MB, 9분 39초)</div>
-                <div class="subsection">### 8-2. 중간 구간 제거 (1)</div>
-                <div class="user-msg">53초~ 1:22 사이 제거해. 원본 남겨둬</div>
-                <div class="claude-msg">완료.<br>- 원본: <span class="file-name">cmd_recording_trimmed.mkv</span> (9분 44초) - 유지됨<br>- 편집본: <span class="file-name">cmd_recording_trimmed2.mkv</span> (9분 17초, 53초~1:22 구간 제거됨)</div>
-                <div class="subsection">### 8-3. 중간 구간 제거 (2)</div>
-                <div class="user-msg">cmd_recording_trimmed2.mkv 2분4초 ~ 3분 5초 구간 제거해. 원본 유지해</div>
-                <div class="claude-msg">완료.<br>- 원본: <span class="file-name">cmd_recording_trimmed2.mkv</span> (9분 17초) - 유지됨<br>- 편집본: <span class="file-name">cmd_recording_trimmed3.mkv</span> (8분 17초, 2:04~3:05 구간 제거됨)</div>
-                <div class="subsection">### 8-4. 중간 구간 제거 (3)</div>
-                <div class="user-msg">cmd_recording_trimmed3.mkv 2분37초 ~ 3분 6초 구간 제거해</div>
-                <div class="claude-msg">완료.<br>- 원본: <span class="file-name">cmd_recording_trimmed3.mkv</span> (8분 18초) - 유지됨<br>- 편집본: <span class="file-name">cmd_recording_trimmed4.mkv</span> (7분 57초, 2:37~3:06 구간 제거됨)</div>
-            </div>
-
-            <div class="console-section">
-                <div class="section-title">## 9. 최종 변환 (2배속 + MP4)</div>
-                <div class="user-msg">cmd_recording_trimmed4.mkv를 2배속으로 만들고 mp4로 바꿔줘</div>
-                <div class="claude-msg">완료.<br>- 파일: <span class="file-name">cmd_recording_trimmed4_2x.mp4</span><br>- 길이: <span class="highlight">3분 58초</span> (원본 7분 57초의 2배속)<br>- 크기: 약 6.7MB</div>
-            </div>
-
-            <div class="console-section">
-                <div class="section-title">## 사용된 주요 FFmpeg 명령어</div>
-                <div class="code-block">ffmpeg -f gdigrab -framerate 30 -offset_x [X] -offset_y [Y] -video_size [W]x[H] -i desktop -c:v libx264 output.mkv</div>
-                <div class="code-block">ffmpeg -i input.mkv -filter:v "setpts=0.5*PTS" -r 30 -c:v libx264 output.mp4</div>
-            </div>
-
-            <div class="console-section">
-                <div class="section-title">## 생성된 파일 목록</div>
-                <table class="ctable">
-                    <tr><th>파일명</th><th>설명</th></tr>
-                    <tr><td><span class="file-name">cmd_recording.mkv</span></td><td>CMD 창 녹화 원본</td></tr>
-                    <tr><td><span class="file-name">cmd_recording_trimmed.mkv</span></td><td>0~1:35 제거</td></tr>
-                    <tr><td><span class="file-name">cmd_recording_trimmed2.mkv</span></td><td>53초~1:22 제거</td></tr>
-                    <tr><td><span class="file-name">cmd_recording_trimmed3.mkv</span></td><td>2:04~3:05 제거</td></tr>
-                    <tr><td><span class="file-name">cmd_recording_trimmed4.mkv</span></td><td>2:37~3:06 제거</td></tr>
-                    <tr><td><span class="file-name">cmd_recording_trimmed4_2x.mp4</span></td><td>최종본 (2배속, MP4)</td></tr>
-                </table>
-            </div>
-        </div>
+    <h1>Code Agent Materials</h1>
+    <div class="menu">
+        <a href="cursor.html" class="menu-item">
+            <span class="menu-number">1</span>
+            <span class="menu-text">Cursor 사용 예시</span>
+        </a>
+        <a href="claude.html" class="menu-item">
+            <span class="menu-number">2</span>
+            <span class="menu-text">Claude Code 사용 예시</span>
+        </a>
     </div>
 </body>
 </html>
